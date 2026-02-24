@@ -210,3 +210,44 @@ body.light .timer-section,
 body.light canvas {
     background: #e2e8f0;
 }
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .timer-input {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    #output {
+        max-height: 300px;
+    }
+}
