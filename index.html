@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Adaptive Study Planner Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div>
+            <h1>AI Adaptive Study Planner Pro</h1>
+            <p id="aiModeIndicator">🧠 AI Mode: Adaptive Intelligence Active</p>
+        </div>
+        <button onclick="toggleTheme()">Switch Mode</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="stats">
+        <div class="stat-card">
+            <h3 id="daysStat">0</h3>
+            <p>Total Study Days</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="subjectStat">0</h3>
+            <p>Subjects</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="weakStat">0</h3>
+            <p>Weak Subjects</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="focusStat">0%</h3>
+            <p>Focus Score</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="confidenceStat">0%</h3>
+            <p>AI Confidence</p>
+        </div>
+        <div class="stat-card highlight">
+            <h3 id="readinessStat">0%</h3>
+            <p>Exam Readiness</p>
+        </div>
+    </div>
+
+    <!-- AI INSIGHTS -->
+    <div class="ai-insights">
+        <h3>🤖 AI Insights</h3>
+        <p id="burnoutStatus">No analysis yet.</p>
+    </div>
+
+    <!-- SUBJECT INPUT -->
+    <div class="input-section">
+
+        <div class="form-group">
+            <label>Number of Subjects</label>
+            <input type="number" id="subjectCount" min="1">
+            <button onclick="createSubjectFields()">Create Fields</button>
+        </div>
+
+        <div id="subjectFields"></div>
+
+        <div class="form-group">
+            <label>Weak Subjects (comma separated)</label>
+            <input type="text" id="weak">
+        </div>
+
+        <div class="form-group">
+            <label>Hours Available Per Day</label>
+            <input type="number" id="hours">
+        </div>
+
+        <div class="button-group">
+            <button onclick="generatePlan()">Generate Smart Plan</button>
+            <button onclick="resetPlan()">Reset</button>
+        </div>
+
+    </div>
+
+    <!-- PLAN -->
+    <h3 class="section-title">📅 Generated Plan</h3>
+    <div id="output"></div>
+
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+
+    <!-- CHART -->
+    <h3 class="section-title">📈 Performance Trend</h3>
+    <canvas id="performanceChart" width="700" height="200"></canvas>
+
+    <!-- TIMER -->
+    <h3 class="section-title">⏳ Focus Timer</h3>
+    <div class="timer-section">
+
+        <div class="timer-input">
+            <label>Study Minutes</label>
+            <input type="number" id="studyMinutes" value="25">
+        </div>
+
+        <div class="timer-input">
+            <label>Break Minutes</label>
+            <input type="number" id="breakMinutes" value="5">
+        </div>
+
+        <p id="sessionLabel">Study Mode</p>
+        <h2 id="timerDisplay">25:00</h2>
+
+        <div class="timer-buttons">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

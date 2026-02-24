@@ -1,0 +1,212 @@
+:root {
+    --accent: #5b6cff;
+    --success: #00ff88;
+    --warning: #ffc107;
+    --danger: #ff4d4d;
+    --bg-dark: #0f172a;
+    --card-dark: #1e293b;
+    --soft-dark: #334155;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    background: var(--card-dark);
+    padding: 30px;
+    border-radius: 18px;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+#aiModeIndicator {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* STATS GRID */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: var(--soft-dark);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-card.highlight {
+    border: 2px solid var(--accent);
+}
+
+/* AI INSIGHTS */
+
+.ai-insights {
+    background: var(--soft-dark);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* FORM SECTION */
+
+.input-section {
+    background: var(--soft-dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 5px;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+    margin-top: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* SUBJECT DYNAMIC BLOCKS */
+
+#subjectFields .form-group {
+    background: #475569;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* PLAN OUTPUT */
+
+.section-title {
+    margin-top: 25px;
+}
+
+#output {
+    max-height: 350px;
+    overflow-y: auto;
+    background: var(--soft-dark);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.day-item {
+    margin-bottom: 6px;
+}
+
+/* PROGRESS BAR */
+
+.progress-container {
+    width: 100%;
+    height: 16px;
+    background: #475569;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CHART */
+
+canvas {
+    background: var(--soft-dark);
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* TIMER */
+
+.timer-section {
+    background: var(--soft-dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.timer-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#timerDisplay {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+/* LIGHT MODE */
+
+body.light {
+    background: #f4f6f9;
+    color: #111;
+}
+
+body.light .container {
+    background: white;
+}
+
+body.light .stat-card,
+body.light .ai-insights,
+body.light .input-section,
+body.light #output,
+body.light .timer-section,
+body.light canvas {
+    background: #e2e8f0;
+}
